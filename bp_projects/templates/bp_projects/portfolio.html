@@ -1,7 +1,34 @@
 <!-- Extending the project layout, as this file will do minor customizations -->
-{% extends "layouts/project.html" %}
+{% extends "layouts/project-custom.html" %}
 
 <!-- Setting up variables to customize "project" details to be specific to index page -->
-{% set project = "Portfolio" %}
-{% set overview = "https://nighthawkcodingsociety.com/projectsearch/details/Flask%20Portfolio%20Starter" %}
+{% set project = "David's" %}
+{% set overview = "https://davidvasilev1.github.io/fastpages/" %}
+{% set scrumboard = "https://github.com/users/DavidVasilev1/projects/1" %}
 {% set repo = "https://github.com/nighthawkcoders/flask_portfolio/" %}
+{% set authors = "https://github.com/DavidVasilev1" %}
+{% set about = "https://davidvasilev1.github.io/fastpages/about/" %}
+
+
+
+{% block background %}
+  <script src="{{ url_for('static', filename='js/three.r119.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/vanta.net2.min.js') }}"></script>
+  <script>
+    VANTA.NET({
+      el: "body",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xd2b7ff,
+      backgroundColor: 0x1c1043,
+      points: 20.00,
+      maxDistance: 18.00,
+      spacing: 14.00
+    })
+  </script>
+{% endblock %}
