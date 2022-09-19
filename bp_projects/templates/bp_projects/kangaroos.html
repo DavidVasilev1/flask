@@ -2,24 +2,25 @@
 {% extends "layouts/project.html" %}
 
 <!-- Setting up variables to customize "project" details to be specific to kangaroos -->
-{% set project = "Kangaroos" %}
-{% set overview = "https://www.youtube.com/watch?v=qXU-4Dwkv2E" %}
-{% set scrumboard = "https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q?view_as=subscriber" %}
-{% set repo = "https://github.com/avabrooks/Python-Web-Portfolio-Series-Demo" %}
-{% set authors = "https://thesmack.nighthawkcodingsociety.com/digitalPortfolios/"  %}
-
+{% set project = "Samit's" %}
+{% set overview = "https://samitpoojary.github.io/FASTPAGES/" %}
+{% set scrumboard = "https://github.com/users/SamitPoojary/projects/2" %}
+{% set repo = "https://github.com/DavidVasilev1/flask" %}
+{% set authors = "https://github.com/SamitPoojary"  %}
+{% set about = "https://samitpoojary.github.io/FASTPAGES/about/" %}
 <!-- Setting up a block replacement to customize background to RINGS -->
+
 {% block background %}
-    <script src="{{ url_for('static', filename='js/three.r119.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/vanta.halo.min.js') }}"></script>
-    <script>
-        VANTA.HALO({
-            el: "body",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00
-        })
-    </script>
+<script src="three.r134.min.js"></script>
+<script src="vanta.clouds.min.js"></script>
+<script>
+VANTA.CLOUDS({
+  el: "#your-element-selector",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00
+})
+</script>
 {% endblock %}
