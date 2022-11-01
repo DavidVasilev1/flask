@@ -6,7 +6,7 @@ import random
 from model_jokes import *
 
 app_api = Blueprint('api', __name__,
-                   url_prefix='/api/jokes')
+                   url_prefix='/api/college')
 
 # API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1
 api = Api(app_api)
@@ -62,8 +62,8 @@ class JokesAPI:
     
 if __name__ == "__main__": 
     # server = "http://127.0.0.1:5000" # run local
-    server = 'https://flask.nighthawkcodingsociety.com' # run from web
-    url = server + "/api/jokes"
+    server = 'https://sadv.nighthawkcodescrums.gq' # run from web
+    url = server + "/api/college"
     responses = []  # responses list
 
     # get count of jokes on server
