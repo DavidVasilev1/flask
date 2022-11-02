@@ -20,7 +20,7 @@ def initData():
         college_data.append({"college": item})
         
 # Return all jokes from jokes_data
-def getJokes():
+def getData():
     return(college_data)
 
 # Joke getter
@@ -30,10 +30,6 @@ def getJoke(id):
 # Pretty Print joke
 def printJoke(joke):
     print(joke['id'], joke['joke'], "\n")
-
-# Number of jokes
-def countJokes():
-    return len(college_data)
 
 # Test Joke Model
 if __name__ == "__main__": 
