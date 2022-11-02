@@ -3,7 +3,7 @@ from flask_restful import Api, Resource # used for REST API building
 import requests  # used for testing 
 import random
 
-from model_jokes import *
+from model_data import *
 
 app_api = Blueprint('api', __name__,
                    url_prefix='/api/college')
@@ -11,7 +11,7 @@ app_api = Blueprint('api', __name__,
 # API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1
 api = Api(app_api)
 
-class JokesAPI:
+class DataAPI:
     # not implemented
     class _Create(Resource):
         def post(self, joke):
@@ -26,18 +26,6 @@ class JokesAPI:
     class _ReadID(Resource):
         def get(self, id):
             return jsonify(getJoke(id))
-
-    # getRandomJoke()
-    class _ReadRandom(Resource):
-        def get(self):
-            return jsonify(getRandomJoke())
-    
-    # getRandomJoke()
-    class _ReadCount(Resource):
-        def get(self):
-            count = countJokes()
-            countMsg = {'count': count}
-            return jsonify(countMsg)
 
     # put method: addJokeHaHa
     class _UpdateLike(Resource):
@@ -55,14 +43,12 @@ class JokesAPI:
     api.add_resource(_Create, '/create/<string:joke>')
     api.add_resource(_Read, '/')
     api.add_resource(_ReadID, '/<int:id>')
-    api.add_resource(_ReadRandom, '/random')
-    api.add_resource(_ReadCount, '/count')
     api.add_resource(_UpdateLike, '/like/<int:id>')
     api.add_resource(_UpdateJeer, '/jeer/<int:id>')
     
 if __name__ == "__main__": 
-    # server = "http://127.0.0.1:5000" # run local
-    server = 'https://sadv.nighthawkcodescrums.gq' # run from web
+    server = "http://127.0.0.1:5000" # run local
+    #server = 'https://sadv.nighthawkcodescrums.gq' # run from web
     url = server + "/api/college"
     responses = []  # responses list
 
