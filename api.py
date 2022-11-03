@@ -27,50 +27,16 @@ class DataAPI:
         def get(self, id):
             return jsonify(getData(id))
 
-    # put method: addJokeHaHa
-    class _UpdateLike(Resource):
-        def put(self, id):
-            return jsonify(getData(id))
-
-    # put method: addJokeBooHoo
-    class _UpdateJeer(Resource):
-        def put(self, id):
-            return jsonify(getData(id))
-
     # building RESTapi resources/interfaces, these routes are added to Web Server
     api.add_resource(_Create, '/create/<string:joke>')
     api.add_resource(_Read, '/')
     api.add_resource(_ReadID, '/<int:id>')
-    api.add_resource(_UpdateLike, '/like/<int:id>')
-    api.add_resource(_UpdateJeer, '/jeer/<int:id>')
     
 if __name__ == "__main__": 
-    server = "http://127.0.0.1:5000" # run local
-    #server = 'https://sadv.nighthawkcodescrums.gq' # run from web
+    # server = "http://127.0.0.1:5000" # run local
+    server = 'https://sadv.nighthawkcodescrums.gq' # run from web
     url = server + "/api/college"
     responses = []  # responses list
-
-    # get count of jokes on server
-    count_response = requests.get(url+"/count")
-    count_json = count_response.json()
-    count = count_json['count']
-
-    # update likes/dislikes test sequence
-    num = str(random.randint(0, count-1)) # test a random record
-    responses.append(
-        requests.get(url+"/"+num)  # read joke by id
-        ) 
-    responses.append(
-        requests.put(url+"/like/"+num) # add to like count
-        ) 
-    responses.append(
-        requests.put(url+"/jeer/"+num) # add to jeer count
-        ) 
-
-    # obtain a random joke
-    responses.append(
-        requests.get(url+"/random")  # read a random joke
-        ) 
 
     # cycle through responses
     for response in responses:
