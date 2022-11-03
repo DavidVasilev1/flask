@@ -20,24 +20,22 @@ class DataAPI:
     # getJokes()
     class _Read(Resource):
         def get(self):
-            return jsonify(getJokes())
+            return jsonify(getData())
 
     # getJoke(id)
     class _ReadID(Resource):
         def get(self, id):
-            return jsonify(getJoke(id))
+            return jsonify(getData(id))
 
     # put method: addJokeHaHa
     class _UpdateLike(Resource):
         def put(self, id):
-            addJokeHaHa(id)
-            return jsonify(getJoke(id))
+            return jsonify(getData(id))
 
     # put method: addJokeBooHoo
     class _UpdateJeer(Resource):
         def put(self, id):
-            addJokeBooHoo(id)
-            return jsonify(getJoke(id))
+            return jsonify(getData(id))
 
     # building RESTapi resources/interfaces, these routes are added to Web Server
     api.add_resource(_Create, '/create/<string:joke>')
