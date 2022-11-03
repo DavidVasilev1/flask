@@ -2,7 +2,7 @@ import random
 from xml.etree.ElementPath import get_parent_map
 
 college_data = []
-college = [
+college_list = [
     {"college": "Brown University", "gpa": "3.94", "ec": "7", "award": "9", "lead": "5", "white": "43", "hispanic": "11", "africanamerican": "7", "asian": "17", "otherrace": "22", "cs": "10", "business": "4", "bio": "10", "politics": "5", "engineer": "6", "ss": "18", "english": "6", "othermajor": "41", "acceptrate": "7.7", "sat": "1420", "act": "32", "gendermale": "48", "genderfemale": "52", "essay": "9"},
     {"college": "Columbia University", "gpa": "3.91", "ec": "5", "award": "9", "lead": "5", "white": "34", "hispanic": "14", "africanamerican": "7", "asian": "18", "otherrace": "27", "cs": "11", "business": "2", "bio": "5", "politics": "9", "engineer": "12", "ss": "26", "english": "5", "othermajor": "30", "acceptrate": "5.9", "sat": "1450", "act": "33", "gendermale": "49", "genderfemale": "51", "essay": "8"},
     {"college": "Cornell University", "gpa": "3.98", "ec": "5", "award": "8", "lead": "4", "white": "36", "hispanic": "14", "africanamerican": "7", "asian": "20", "otherrace": "23", "cs": "13", "business": "14", "bio": "13", "politics": "4", "engineer": "14", "ss": "9", "english": "1", "othermajor": "32", "acceptrate": "10.9", "sat": "1420", "act": "32", "gendermale": "46", "genderfemale": "54", "essay": "8"},
@@ -16,7 +16,7 @@ college = [
 # Initialize jokes
 def initData():
     # setup jokes into a dictionary with id, joke, haha, boohoo
-    for item in college:
+    for item in college_list:
         college_data.append({"college": item})
         
 # Return all jokes from jokes_data
