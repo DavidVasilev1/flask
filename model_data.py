@@ -17,7 +17,7 @@ college_list = [
 def initData():
     # setup jokes into a dictionary with id, joke, haha, boohoo
     for item in college_list:
-        college_data.append({"college": item})
+        college_data.append({"college_lists": item})
         
 # Return all jokes from jokes_data
 def getData():
