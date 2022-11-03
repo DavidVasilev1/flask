@@ -28,8 +28,8 @@ def getJoke(id):
     return(college_data[id])
 
 # Pretty Print joke
-# def printJoke(joke):
-#     print(joke['id'], joke['joke'], "\n")
+def printJoke(college_list):
+    print(college_list['id'], college_list['joke'], "\n")
 
 # Test Joke Model
 if __name__ == "__main__": 
